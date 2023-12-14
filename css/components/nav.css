@@ -1,0 +1,73 @@
+.nav {
+  background-color: #f9f9fa;
+  padding: 20px 40px;
+  border-top: 1px solid rgb(219, 219, 222, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nav__ul {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__a {
+  color: #2e363e;
+  position: relative;
+}
+
+.fa-ellipsis-h::after {
+  content: '.';
+  position: absolute;
+  bottom: 30px;
+  color: tomato;
+  width: 30px;
+  height: 30px;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+@keyframes notificationAnimation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.nav__notification {
+  position: absolute;
+  left: 13px;
+  bottom: 15px;
+  animation: notificationAnimation 2s ease-in-out infinite;
+}
+
+@keyframes appearliAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav__li {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: appearliAnimation 0.3s ease-in-out forwards;
+}
+
+.nav__li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav__li:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.nav__li:last-child {
+  animation-delay: 0.8s;
+}
